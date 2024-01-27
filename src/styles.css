@@ -2,5 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '~ag-grid-community/styles/ag-grid.css';
+@import '~ag-grid-community/styles/ag-theme-balham.css';
+@import '~ag-grid-community/styles/ag-theme-alpine.css';
+
 .flex_col {display: flex; flex-direction: column;}
 .flex_row {display: flex; flex-direction: row;}
