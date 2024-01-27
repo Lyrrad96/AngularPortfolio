@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Automate Routine Tasks</title>
+    <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="src/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="src/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="src/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="src/icon/feather/css/feather.css">
+    <link rel="stylesheet" type="text/css" href="src/libs/remix/remixicon.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/mdb.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="src/css/ui-grid-group-columns.css">
+    <link rel="stylesheet" type="text/css" href="src/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="src/css/common.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="src/css/review.css" /> -->
+    <link rel="stylesheet" type="text/css" href="src/css/automation.css" />
+    <link rel='stylesheet' href='src/libs/luckysheet/plugins/css/pluginsCss.css' />
+    <link rel='stylesheet' href='src/libs/luckysheet/plugins/plugins.css' />
+    <link rel='stylesheet' href='src/libs/luckysheet/expendPlugins/chart/chartmix.css' />
+    <link rel='stylesheet' href='src/libs/luckysheet/css/luckysheet.css' />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+    <script>
+        sessionStorage['user_id'] = "<%= user_id %>";
+        sessionStorage['user_role'] = "<%= user_role %>";
+        sessionStorage['batch'] = "<%= batch %>";
+        sessionStorage['pid'] = "<%= pid %>";
+        sessionStorage['docids'] = "<%= docids %>";
+        sessionStorage['taxo_api'] = "<%= taxo_api %>";
+    </script>
+    <script type="text/javascript" src="src/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="src/libs/popper.min.js"></script>
+    <script type="text/javascript" src="src/libs/angular.min.js"></script>
+    <script type="text/javascript" src="src/libs/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="src/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="src/libs/ag-grid-community.min.js"></script>
+    <!-- <script type="text/javascript" src="src/libs/ag-grid-enterprise.min.js"></script> -->
+    <script type="text/javascript" src="src/libs/ui-grid.js"></script>
+    <script type="text/javascript" src="src/libs/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="src/libs/mdb.min.js" defer></script>
+    <script type="text/javascript" src="src/libs/angular-ui.js" defer></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="src/libs/gojs_lib_main.js"></script>
+    <script src="src/libs/luckysheet/plugins/js/plugin.js"></script>
+    <script src="src/libs/luckysheet/luckysheet.umd.js"></script>
+    <script type="text/javascript" src="src/libs/jquery.resize.js"></script>
+    <script type="text/javascript" src="src/libs/jquery-ui.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ag-grid/Docs-29.1.0-20230221/ag-grid-community.min.js" integrity="sha512-Hf4Op0g1Pw00c2zoXbkydWvfsUl02qxLRIkWksqEPc+nUI2VUTqxol+0fQ4mX52ifmwVfXQOcTmKKVXe+KXy/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!--<script type="text/javascript" src="src/libs/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="src/js/modules/resizedom.js"></script>
+    <script type="text/javascript" src="src/js/modules/reference_module.js"></script>
+    <script type="text/javascript" src="src/js/modules/grid_module.js"></script>
+    <script type="text/javascript" src="src/js/modules/grid_component.js"></script>
+    <script type="text/javascript" src="src/js/modules/grid_module_harsh.js"></script>
+    <script type="text/javascript" src="src/js/modules/doc_classification.js"></script>
+    <script type="text/javascript" src="src/js/modules/dropdown_module.js"></script>
+    <script type="text/javascript" src="src/js/modules/tabs_module.js"></script>
+    <script type="text/javascript" src="src/js/modules/login_module.js"></script>
+    <script type="text/javascript" src="src/js/modules/otp_valitation.js"></script>
+    <script type="text/javascript" src="src/js/modules/canvas.js"></script>
+    <script type="text/javascript" src="src/js/modules/ref_auto_render/reference_module.js"></script>
+    <script type="text/javascript" src="src/js/modules/ref_auto_render/reference_module_tt.js"></script>
+    <script type="text/javascript" src="src/js/modules/filter_module.js"></script>
+    <script type="text/javascript" src="src/js/modules/enterprise_module.js"></script>
+    <script type="text/javascript" src="src/js/modules/switchmodule.js"></script>
+    <script type="text/javascript" src="src/js/modules/ser_module/ser_smodule.js"></script>
+    <script type="text/javascript" src="src/js/modules/reference_module_mani.js"></script>
+    <script type="text/javascript" src="src/js/modules/reconciliation.js"></script>
+    <!-- <script type="text/javascript" src="src/js/modules/data_builder.js"></script> -->
+
+    <script type="text/javascript" src="src/js/common/app.js"></script>
+    <script type="text/javascript" src="src/js/common/service.js"></script>
+    <script type="text/javascript" src="src/js/common/factory.js"></script>
+    <script type="text/javascript" src="src/js/common/directive.js"></script>
+    <script type="text/javascript" src="src/js/common/filter.js"></script>
+    <script type="text/javascript" src="src/js/review.js"></script>
+    <script type="text/javascript" src="src/js/automation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Adding external for sometime -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="src/fonts/Inter-4.0/">
+    <link rel="stylesheet" href="src/fonts/Inter-4.0/web/inter.css">
+    <!-- MDB -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script> -->
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 0px 16px;
+            background-color: white;
+            width: 100%;
+        }
+
+        th {
+            align-items: center;
+            gap: var(--radius-spacing-0, 0px);
+            align-self: stretch;
+            height: 40px;
+            border-top: 0px !important;
+            color: #262626;
+            text-align: center;
+            background-color: #E9EFF6;
+            padding: 12px 0px;
+            gap: 16px;
+            font-family: Inter;
+            font-size: 20px !important;
+            font-style: normal;
+            font-weight: 500 !important;
+            line-height: 150%;
+            /* 30px */
+
+        }
+
+        td {
+            text-align: center;
+            padding: 8px 0px;
+            border-radius: 4px;
+            font-family: Inter;
+            font-size: 14px !important;
+            font-style: normal;
+            font-weight: 500 !important;
+            line-height: 150%;
+            /* 21px */
+            /* background-color: #F2F4F7; */
+            /* padding: var(--radius-spacing-0, 0px); */
+            gap: 16px;
+            /* Add padding to cells */
+        }
+    </style>
+
+</head>
+
+<body ng-app="app" ng-controller="automationCntrl"><!--id="bodywrapper"-->
+    <!-- Page Header -->
+    <!-- <button ng-init="extra" ng-click="extra=!extra" style="height: 10px;width: 10px;margin-left: 20px;"></button>
+    <div ng-if="extra">
+        <button ng-click="aggridconfig.colourPallete='pblue'; aggridconfig.scope.gridOptions.api.redrawRows()">blue</button>
+        <button ng-click="aggridconfig.colourPallete='pgreen'; aggridconfig.scope.gridOptions.api.redrawRows()">green</button>
+        <button ng-click="aggridconfig.colourPallete='pred'; aggridconfig.scope.gridOptions.api.redrawRows()">red</button>
+    </div> -->
+    <div style="padding: 24px;width: 100vw; height: 98vh;">
+        <ag-grid-data agconfig="aggridconfig"></ag-grid-data>
+    </div>
+    <!-- <div style="padding: 24px;width: 100vw; height: 98vh;" ng-repeat="config in a track by $index">
+        <ag-grid-data agconfig="config"></ag-grid-data>
+    </div> -->
+    <% include common_views %>
+    <div class="container-fluid h-100 p-0 m-0" ng-if="0">
+        <header class=""
+            style="padding: 0px 24px;height: 48px;justify-content: space-between;align-items: center;align-self: stretch;background: var(--main-white, #FFF);box-shadow: 0px 4px 8px 0px rgba(14, 31, 53, 0.08), 0px 1px 4px 0px rgba(14, 31, 53, 0.12);border-radius: 0px; z-index: 100;position: relative;">
+            <div class="flex_row gap-3 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 22" fill="none">
+                    <path
+                        d="M1.84615 0H22.1538C23.1734 0 24 0.820813 24 1.83333V20.1667C24 21.1792 23.1734 22 22.1538 22H1.84615C0.826551 22 0 21.1792 0 20.1667V1.83333C0 0.820814 0.826551 0 1.84615 0Z"
+                        fill="#FAAD14" />
+                    <path d="M6.46172 5.50001H17.5386V16.5H6.46172V5.50001Z" fill="white" />
+                    <path d="M9.23063 8.24999H14.7691V13.75H9.23063V8.24999Z" fill="#FAAD14" />
+                    <path d="M10.6153 9.62498H13.3845V12.375H10.6153V9.62498Z" fill="white" />
+                    <path d="M2.76938 5.50001H5.53861V8.25001H2.76938V5.50001Z" fill="white" />
+                    <path d="M6.46172 2.74998H9.23095V6.41664H6.46172V2.74998Z" fill="white" />
+                    <path d="M18.4617 13.75H21.231V16.5H18.4617V13.75Z" fill="white" />
+                    <path d="M14.7694 16.5L17.5386 16.5L17.5386 19.25H14.7694V16.5Z" fill="white" />
+                </svg>
+                <span class="typography" style="padding-left: 6px;">
+                    Data/Document Workflow Management & Automation
+                </span>
+            </div>
+            <div class="float-right flex_row gap-5">
+                <span ng-if="reviewflg" style="margin: auto; height: 22px;">
+                    <!-- <div class="tabs"> -->
+                        <nav class="tabs filled_tabs_parent_header">
+                            <div class="nav nav-tabs font12g h-100" id="nav-tab" role="tablist">
+                                <div class="filled_tabs_header rounded-1 m-0 h-100" id="inc-oper-tab" data-bs-toggle="tab"
+                                    data-bs-target="#inc-oper" type="button" role="tab"
+                                    aria-controls="inc-oper" aria-selected="true" ng-click="INC_Operations()"
+                                    ng-class="{'secondary':activebutton4=='Operations'}">
+                                    <span> INC Operations </span></label>
+                                </div>
+                                <div class="filled_tabs_header rounded-1 m-0 h-100" id="inc-compar-tab" data-bs-toggle="tab"
+                                    data-bs-target="#inc-compar" type="button" role="tab"
+                                    aria-controls="inc-compar" aria-selected="false" ng-click="INC_Comparison()"
+                                    ng-class="{'secondary':activebutton4=='Comparison'}">
+                                    <span> INC Comparison </span></label>
+                                </div>
+                            </div>
+                        </nav>
+                </span>
+                
+                <div class="dropdown" ng-click="select_a()">
+                    <div class="text">Automation
+                        Routine - INC</div>
+                    <div class="icon-wrapper">
+                        <div class="icon">
+                            <svg class="down" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.15167 2.14294H8.31461C8.25769 2.14294 8.20412 2.17085 8.17064 2.21661L4.99988 6.58714L1.82912 2.21661C1.79564 2.17085 1.74207 2.14294 1.68515 2.14294H0.848094C0.775549 2.14294 0.733139 2.22553 0.775549 2.28469L4.71082 7.70991C4.85367 7.90634 5.14608 7.90634 5.28783 7.70991L9.22309 2.28469C9.26662 2.22553 9.22421 2.14294 9.15167 2.14294Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- <span>
+                    <button type="button" class="btn m-0" style="background-color: #6680FF;color: #FFF;"
+                        ng-click="select_a()">Automation Routine - INC
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path
+                                d="M9.95989 4.47488L6.69989 7.73488C6.31489 8.11988 5.68489 8.11988 5.29989 7.73488L2.03989 4.47488"
+                                stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </span> -->
+                
+                <div style="margin-bottom: 0px;">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill=""
+                            style="margin-top: 0px;" class="usersvg" ng-click="user_click()"
+                            ng-class="{'usersvg_clk':helight_usersvg}">
+                            <path
+                                d="M0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14Z"
+                                fill="#F9FAFB" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14.0005 9.9001C12.7717 9.9001 11.7755 10.8963 11.7755 12.1251C11.7755 13.3539 12.7717 14.3501 14.0005 14.3501C15.2293 14.3501 16.2255 13.3539 16.2255 12.1251C16.2255 10.8963 15.2293 9.9001 14.0005 9.9001ZM16.8813 14.9361C17.5893 14.2106 18.0255 13.2188 18.0255 12.1251C18.0255 9.90216 16.2234 8.1001 14.0005 8.1001C11.7776 8.1001 9.9755 9.90216 9.9755 12.1251C9.9755 13.2188 10.4117 14.2105 11.1196 14.936C10.6863 15.1259 10.2848 15.3584 9.92474 15.6285C8.84934 16.4349 8.09998 17.6178 8.09998 19.0002C8.09998 19.4973 8.50292 19.9002 8.99998 19.9002C9.49703 19.9002 9.89998 19.4973 9.89998 19.0002C9.89998 18.3116 10.2702 17.6194 11.0047 17.0685C11.7394 16.5175 12.7957 16.1501 14.0005 16.1501C15.2053 16.1501 16.2612 16.5175 16.9957 17.0685C17.7299 17.6192 18.1 18.3114 18.1 19.0002C18.1 19.4973 18.5029 19.9002 19 19.9002C19.497 19.9002 19.9 19.4973 19.9 19.0002C19.9 17.618 19.151 16.4351 18.0758 15.6286C17.7158 15.3585 17.3145 15.1259 16.8813 14.9361Z"
+                                fill="#6680FF" />
+                        </svg>
+                    </span>
+                    <span>
+                        <svg class="state-default" width="28" height="28" viewBox="0 0 28 28" fill=""
+                            style="margin-top: 0px;" xmlns="http://www.w3.org/2000/svg" id="setting"
+                            ng-click="setting_click()" ng-class="{'setting_clk':helight_settingsvg}">
+                            <path
+                                d="M0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14Z"
+                                fill="#F9FAFB" />
+                            <path
+                                d="M20 13.425V14.575C19.9966 14.6802 19.9579 14.7813 19.8901 14.8618C19.8223 14.9424 19.7294 14.9977 19.6263 15.019L18.6825 15.182C18.6303 15.1912 18.582 15.224 18.5677 15.275C18.4653 15.6422 18.3187 15.9957 18.1311 16.3276C18.1051 16.3736 18.1166 16.4311 18.1475 16.4741L18.6992 17.2568C18.7574 17.3447 18.7842 17.4498 18.7752 17.5549C18.7662 17.66 18.722 17.7589 18.6497 17.8358L17.8352 18.6503C17.7584 18.7223 17.6595 18.7663 17.5546 18.7751C17.4497 18.784 17.3449 18.7572 17.2571 18.6991L16.4746 18.148C16.431 18.1174 16.3731 18.1057 16.3267 18.1319C16.0054 18.3132 15.6639 18.4561 15.3094 18.5577C15.2333 18.5796 15.1876 18.6562 15.1738 18.7342L15.0285 19.5751C15.0043 19.6925 14.9412 19.7983 14.8495 19.8754C14.7578 19.9524 14.6428 19.9964 14.523 20H13.477C13.3572 19.9964 13.2422 19.9525 13.1505 19.8754C13.0588 19.7983 12.9957 19.6925 12.9715 19.5751L12.8262 18.7342C12.8122 18.6563 12.7667 18.5795 12.6906 18.5577C12.3359 18.456 11.9943 18.313 11.6728 18.1316C11.6266 18.1055 11.569 18.117 11.5254 18.1472L10.7429 18.6991C10.6549 18.7573 10.5499 18.784 10.4448 18.7751C10.3397 18.7661 10.2408 18.7218 10.164 18.6495L9.34948 17.835C9.2777 17.7582 9.23386 17.6594 9.22503 17.5547C9.21619 17.45 9.24287 17.3453 9.30077 17.2576L9.85254 16.4749C9.88294 16.4314 9.89422 16.3738 9.86811 16.3275C9.6808 15.9956 9.53443 15.6422 9.43222 15.275C9.41802 15.224 9.36967 15.1912 9.31754 15.182L8.3737 15.019C8.27054 14.9979 8.17753 14.9425 8.10972 14.862C8.0419 14.7814 8.00324 14.6803 8 14.575V13.425C8.00324 13.3197 8.0419 13.2186 8.10972 13.138C8.17753 13.0575 8.27054 13.0021 8.3737 12.981L9.31754 12.818C9.36947 12.8089 9.41809 12.7766 9.43224 12.7258C9.53453 12.3587 9.6809 12.0053 9.86814 11.6733C9.89425 11.627 9.8831 11.5694 9.85254 11.5259L9.30077 10.7432C9.24281 10.6554 9.2161 10.5506 9.22493 10.4457C9.23377 10.3408 9.27764 10.242 9.34948 10.165L10.164 9.35046C10.2408 9.2783 10.3398 9.23415 10.4448 9.22516C10.5499 9.21618 10.6549 9.24288 10.7429 9.30094L11.5254 9.85279C11.569 9.88342 11.6269 9.89506 11.6733 9.86884C12.005 9.6814 12.3582 9.53488 12.7251 9.43247C12.7759 9.4183 12.8082 9.36963 12.8174 9.31772L12.9803 8.37375C13.0015 8.27058 13.0568 8.17756 13.1374 8.10973C13.2179 8.0419 13.319 8.00324 13.4243 8H14.5757C14.681 8.00324 14.7821 8.0419 14.8626 8.10973C14.9432 8.17756 14.9985 8.27058 15.0197 8.37375L15.1826 9.31772C15.1916 9.36972 15.224 9.41828 15.2748 9.43247C15.6418 9.53492 15.995 9.68145 16.3267 9.86885C16.3731 9.89507 16.431 9.88342 16.4746 9.85279L17.2571 9.30094C17.345 9.24294 17.4499 9.21628 17.5548 9.22526C17.6597 9.23424 17.7585 9.27835 17.8352 9.35046L18.6497 10.165C18.7218 10.2418 18.7659 10.3406 18.7749 10.4455C18.7839 10.5505 18.7572 10.6553 18.6992 10.7432L18.1475 11.5259C18.1165 11.5694 18.1051 11.6273 18.1314 11.6737C18.3188 12.0055 18.4653 12.3588 18.5677 12.7258C18.5819 12.7766 18.6305 12.8088 18.6825 12.818L19.6263 12.981C19.7294 13.0023 19.8223 13.0576 19.8901 13.1382C19.9579 13.2187 19.9966 13.3198 20 13.425ZM16.0434 14C16.0432 13.5959 15.9233 13.2009 15.6987 12.8649C15.4741 12.5289 15.1549 12.2671 14.7816 12.1126C14.4082 11.958 13.9975 11.9176 13.6012 11.9964C13.2049 12.0753 12.8408 12.2699 12.5551 12.5557C12.2694 12.8415 12.0748 13.2055 11.9959 13.6019C11.917 13.9983 11.9574 14.4091 12.112 14.7825C12.2666 15.1559 12.5283 15.4751 12.8643 15.6997C13.2002 15.9243 13.5951 16.0443 13.9992 16.0445C14.2677 16.0446 14.5335 15.9918 14.7816 15.8891C15.0297 15.7863 15.2551 15.6358 15.4449 15.4459C15.6347 15.256 15.7853 15.0306 15.888 14.7825C15.9907 14.5344 16.0435 14.2685 16.0434 14Z"
+                                fill="#6680FF" />
+                        </svg>
+                    </span>
+                    <span>
+                        <svg class="state-default" width="28" height="28" viewBox="0 0 28 28" fill=""
+                            style="margin-top: 0px;" xmlns="http://www.w3.org/2000/svg" id="logout"
+                            ng-click="logout_func()()" ng-class="{'logout_clk':helight_logoutsvg}">
+                            <path
+                                d="M0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14Z"
+                                fill="#F9FAFB" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M13.9997 7.5C14.5052 7.5 14.915 7.90924 14.915 8.41406V14.2682C14.915 14.7731 14.5052 15.1823 13.9997 15.1823C13.4942 15.1823 13.0844 14.7731 13.0844 14.2682V8.41406C13.0844 7.90924 13.4942 7.5 13.9997 7.5ZM11.2952 10.3214C11.6304 10.6993 11.5955 11.277 11.2172 11.6118C10.3445 12.384 9.83051 13.3669 9.83051 14.5585C9.83051 16.8217 11.6886 18.6719 14 18.6719C16.3114 18.6719 18.1695 16.8217 18.1695 14.5585C18.1695 13.3669 17.6555 12.384 16.7828 11.6118C16.4045 11.277 16.3696 10.6993 16.7048 10.3214C17.0401 9.94359 17.6185 9.90871 17.9968 10.2435C19.2046 11.3123 20 12.7722 20 14.5585C20 17.8485 17.3051 20.5 14 20.5C10.695 20.5 8 17.8485 8 14.5585C8 12.7722 8.79535 11.3124 10.0032 10.2435C10.3815 9.9087 10.96 9.94359 11.2952 10.3214Z"
+                                fill="#FF4D4F" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </header>
+        <!-- Dropdown_list -->
+        <!-- props: {"text":{"type":"TEXT","defaultValue":"'Automation Routines - TOC'"}} -->
+        <div class="dropdown-opened" ng-if="select_drp">
+            <div class="frame-811456">
+                <div class="dropdown-list">
+                    <div class="automation-routines-inc">Automation Routines - INC</div>
+                </div>
+                <div class="dropdown-list">
+                    <div class="automation-routines-inc">Automation Routines - TOC</div>
+                </div>
+                <div class="dropdown-list">
+                    <div class="automation-routines-inc2">Automation Routines - Search</div>
+                </div>
+                <div class="dropdown-list">
+                    <div class="automation-routines-inc">
+                        Automation Routines - Single Column
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="" style="display:flex;flex-direction: row;height: calc(100% - 50px);" ng-if="!reviewflg">
+            <!-- Side menu -->
+            <div class="sidemenu" ng-style="(silde_menu)?{}:{'transform': 'translate(-100%, 0)', 'opacity': '0'}">
+                <div class="submenu" ng-style="(silde_menu)?{}:{'display': 'none'}">
+                    <div class="card">
+                        <div class="card-header p-0">
+                            <div class="card m-0 bg_grey1"
+                                style="height: 64px;padding: 16px 12px 16px 24px !important;display: flex;flex-direction: row; box-shadow: none;">
+
+                                <nav class="tabs" style="margin: 2px;height: 30px;width: 74%;">
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist" style="margin: 2px;">
+                                        <div class="btn m-0" id="nav-home-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                            aria-selected="true" ng-click="project_name_show1()"
+                                            ng-class="{'mainprimary':activebutton=='Projects'}"
+                                            style="height: 26px;padding: 2px 12px;color: #595959;">
+                                            <span>Projects </span></label>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1" height="16" viewBox="0 0 1 16"
+                                            fill="none" style="margin-top: 2%;">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500007 0C0.676738 0 0.820007 0.191025 0.820007 0.426667L0.820007 15.5733C0.820007 15.809 0.676738 16 0.500007 16C0.323276 16 0.180007 15.809 0.180007 15.5733L0.180007 0.426667C0.180007 0.191025 0.323276 0 0.500007 0Z"
+                                                fill="#DADEE7" />
+                                        </svg>
+                                        <div class="btn m-0" id="nav-profile-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-profile" type="button" role="tab"
+                                            aria-controls="nav-profile" aria-selected="false" ng-click="project_show()"
+                                            ng-class="{'mainprimary':activebutton=='Batches'}"
+                                            style="height: 26px;padding: 2px 12px;color: #595959;">
+                                            <span>Batches</span></label>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1" height="16" viewBox="0 0 1 16"
+                                            fill="none" style="margin-top: 2%;">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500007 0C0.676738 0 0.820007 0.191025 0.820007 0.426667L0.820007 15.5733C0.820007 15.809 0.676738 16 0.500007 16C0.323276 16 0.180007 15.809 0.180007 15.5733L0.180007 0.426667C0.180007 0.191025 0.323276 0 0.500007 0Z"
+                                                fill="#DADEE7" />
+                                        </svg>
+                                        <div class="btn m-0" id="nav-contact-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-contact" type="button" role="tab"
+                                            aria-controls="nav-contact" aria-selected="false" ng-click="sbt()"
+                                            ng-class="{'mainprimary':activebutton=='Data/Documents'}"
+                                            style="height: 26px;padding: 2px 12px;color: #595959;">
+                                            <span>Data/Documents</span></label>
+                                        </div>
+                                    </div>
+                                </nav>
+                                <div style="width:25%" id="closered" role="button">
+                                    <svg class="float-right" xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                                        fill="currentColor" style="margin-top: 3%;" class="bi bi-x" viewBox="0 0 16 16"
+                                        color="red" ng-click="project1_close()">
+                                        <path
+                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="selecttxt bg_grey1 border-top border-bottom" style="height: 42px;padding: 12px 32px;width: 100%;background-color: #F6F7FA;">
+                                <ol class="m-0 p-0">
+
+
+                                    <span class="breadcrumb-item font12g" ng-repeat="item in t_grid track by $index"
+                                        title="{{item}}">
+                                            {{item | limitTo:22}}
+                                        <span class="px-1 py-0">/</span>
+                                    </span>
+                                </ol>
+                            </span>
+                            <!-- <span class="selecttxt bgmain text border-top"
+                                style="border-top: 1px solid var(--dividers, #DADEE7);background: #FCFCFD;">{{selected_sa_doc_value}}</span> -->
+                            <div class="tab-content" id="nav-tabContent" style="height: 100vh;">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                    aria-labelledby="nav-home-tab" style="overflow-y: scroll;height: 84vh;">
+                                    <div class="card-body text-primary p-4">
+                                        <ul class="list-group list-group-light"
+                                            ng-repeat="item in sa_doc_id_lst track by $index" style="background: #FCFCFD;margin-top: 16px;cursor: pointer;
+                                        " ng-class="{'hilght': selected_sa_doc_value == item.k}">
+                                            <li class="list-group-item px-3 border-0 projtelgrapy"
+                                                style="padding: 8px 16px;background: #FCFCFD;color: #808080;"
+                                                ng-click="sa_docs(item['pid'], item['k'],$event)" title={{item.k}}
+                                                ng-class="{'hilght': selected_sa_doc_value == item.k}">
+                                                {{item['k']}}({{item['cnt']}})</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                    aria-labelledby="nav-profile-tab" style="overflow-y: scroll;height: 84vh;">
+                                    <div class="card-body text-primary" style="padding: 24px 24px;">
+                                        <ul class="list-group list-group-light"
+                                            ng-repeat="b in brokers_list | filter:blfp track by $index"
+                                            style="cursor: pointer;display: flex;flex-direction: row;margin-top: 16px;">
+                                            <!-- Checkbox -->
+                                            <li class="list-group-item px-3  projtelgrapy"
+                                                style="padding: 8px 16px;background: #FCFCFD;color: #808080;display: flex;flex-direction: row;width: 100%;"
+                                                ng-click="get_docs(b, false)" title={{item.k}}
+                                                ng-class="{'hilght': bselcted['k'] == b['k']}">
+                                                <div class="form-check" style="float: left;width: 10%;">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="CheckDefaultBatch">
+                                                </div>
+                                                <span style="width: 80%;"> {{b['n'] |
+                                                    limitTo:24}}...({{b['cnt']}})</span>
+                                                <div style="width: 10%;"
+                                                    ng-click="batchname_status(b);$event.stopPropagation();"
+                                                    ng-class="{'checked':dd['checked']}">
+                                                    <div class="float-right _aplvo _ft" style="width:auto;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="#218BFF" class="bi bi-info-circle"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                            <path
+                                                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                        </svg>
+                                                        <i class="bi bi-info-circle"></i>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                                    aria-labelledby="nav-contact-tab">
+                                    <div class="card-body text-primary" style="padding: 24px 24px;">
+                                        <ul class="list-group list-group-light"
+                                            ng-repeat="b in Automation_reslt['gray'] | filter:blfp track by $index"
+                                            style="cursor: pointer;display: flex;flex-direction: row;margin-top: 16px;">
+                                            <!-- Checkbox -->
+                                            <li class="list-group-item px-3  projtelgrapy"
+                                                style="padding: 8px 16px;background: #FCFCFD;color: #808080;display: flex;flex-direction: row;width: 100%;"
+                                                ng-click="datadocument(b)" title={{item.k}}
+                                                ng-class="{'hilght': datadoc == {{b.doc_id}}}">
+                                                <div class="form-check" style="float: left;width: 10%;">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="CheckDefaultBatch">
+                                                </div>
+                                                <span style="width: 80%;"> {{b.doc_id}}</span>
+                                                <div style="width: 10%;"
+                                                    ng-click="batchname_status(b);$event.stopPropagation();"
+                                                    ng-class="{'checked':dd['checked']}">
+                                                    <div class="float-right _aplvo _ft" style="width:auto;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none">
+                                                            <path
+                                                                d="M12 1.5C6.20156 1.5 1.5 6.20156 1.5 12C1.5 17.7984 6.20156 22.5 12 22.5C17.7984 22.5 22.5 17.7984 22.5 12C22.5 6.20156 17.7984 1.5 12 1.5ZM15.6258 12.1523L9.86016 16.3242C9.73594 16.4133 9.5625 16.3242 9.5625 16.1719V15.0727C9.5625 14.8336 9.67734 14.6063 9.87188 14.4656L13.2797 12L9.87188 9.53438C9.67734 9.39375 9.5625 9.16875 9.5625 8.92734V7.82812C9.5625 7.67578 9.73594 7.58672 9.86016 7.67578L15.6258 11.8477C15.7289 11.9227 15.7289 12.0773 15.6258 12.1523Z"
+                                                                fill="#1890FF" />
+                                                        </svg>
+                                                        <i class="bi bi-info-circle"></i>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content" class="h-100 position-absolute" ng-style="(silde_menu)?{'width': 'calc(100% - 440px)', 'margin-left': '440px', 'transition': 'ease-in-out .4s'}:{'width': '100%'}">
+                <!-- Section Tabs and menuIcons -->
+                <section class="card m-0  border-0 bg_grey1"
+                    style="padding: 16px 24px;color: #595959;gap: 12px;height: 64px;border-radius: 0px;">
+                    <div class="flex_row" style="height: 28px;width: 100%;gap: 12px;" role="button">
+                        <span class="menu_icon" ng-click="menu_icon()" ng-if="!silde_menu" ng-mouseover="hoverIn()"
+                            ng-mouseleave="hoverOut()"><!--ng-click="menu_icon()" -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
+                                fill="none" ng-show="show_hover">
+                                <path
+                                    d="M0.000279069 1.39619C0.000279069 0.625096 0.511954 0 1.14314 0H14.8574C15.4886 0 16.0003 0.625096 16.0003 1.39619C16.0003 2.16729 15.4886 2.79238 14.8574 2.79238H1.14314C0.511954 2.79238 0.000279069 2.16729 0.000279069 1.39619Z"
+                                    fill="#1890FF" />
+                                <path
+                                    d="M0 7.17448C0 6.40339 0.511675 5.77829 1.14286 5.77829H14.8571C15.4883 5.77829 16 6.40339 16 7.17448C16 7.94558 15.4883 8.57067 14.8571 8.57067H1.14286C0.511675 8.57067 0 7.94558 0 7.17448Z"
+                                    fill="#1890FF" />
+                                <path
+                                    d="M0.000279069 12.6038C0.000279069 11.8327 0.511954 11.2076 1.14314 11.2076H14.8574C15.4886 11.2076 16.0003 11.8327 16.0003 12.6038C16.0003 13.3749 15.4886 14 14.8574 14H1.14314C0.511954 14 0.000279069 13.3749 0.000279069 12.6038Z"
+                                    fill="#1890FF" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24"
+                                fill="none" ng-show="!show_hover">
+                                <path
+                                    d="M0.500359 2.2951C0.500359 1.30369 1.15823 0.5 1.96975 0.5H19.6024C20.4139 0.5 21.0718 1.30369 21.0718 2.2951C21.0718 3.28651 20.4139 4.0902 19.6024 4.0902H1.96975C1.15823 4.0902 0.500359 3.28651 0.500359 2.2951Z"
+                                    fill="#1890FF" />
+                                <path
+                                    d="M0.5 9.72433C0.5 8.73293 1.15787 7.92923 1.96939 7.92923H19.602C20.4136 7.92923 21.0714 8.73293 21.0714 9.72433C21.0714 10.7157 20.4136 11.5194 19.602 11.5194H1.96939C1.15787 11.5194 0.5 10.7157 0.5 9.72433Z"
+                                    fill="#1890FF" />
+                                <path
+                                    d="M0.500359 16.7049C0.500359 15.7135 1.15823 14.9098 1.96975 14.9098H19.6024C20.4139 14.9098 21.0718 15.7135 21.0718 16.7049C21.0718 17.6963 20.4139 18.5 19.6024 18.5H1.96975C1.15823 18.5 0.500359 17.6963 0.500359 16.7049Z"
+                                    fill="#1890FF" />
+                            </svg>
+                        </span>
+                        <div class="tabs">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist" style="height: 24px;margin: 2px;">
+                                    <div class="btn m-0  " id="nav-Routines-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-Routines" type="button" role="tab"
+                                        aria-controls="nav-Routines" aria-selected="true" ng-click="Auto_Routine()"
+                                        ng-class="{'mainprimary':activebutton1=='Routines'}"
+                                        style="height: 24px;padding: 2px;">
+                                        <span style="padding: 2px 12px;">Automation Routines </span></label>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1" height="16" viewBox="0 0 1 16"
+                                        fill="none" style="margin-top: 2%;">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M0.500007 0C0.676738 0 0.820007 0.191025 0.820007 0.426667L0.820007 15.5733C0.820007 15.809 0.676738 16 0.500007 16C0.323276 16 0.180007 15.809 0.180007 15.5733L0.180007 0.426667C0.180007 0.191025 0.323276 0 0.500007 0Z"
+                                            fill="#DADEE7" />
+                                    </svg>
+                                    <div class="btn m-0 " id="nav-Results-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-Results" type="button" role="tab"
+                                        aria-controls="nav-Results" aria-selected="false" ng-click="Auto_Results()"
+                                        ng-class="{'mainprimary':activebutton1=='Results'}"
+                                        style="height: 24px;padding: 2px;">
+                                        <span style="padding: 2px 12px;">Automation Results</span></label>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Tabs for automation Routine -->
+                        <div class="float-right" style="width: 77%;" ng-if="activebutton1=='Results'">
+                            <nav style="float:right;">
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist"
+                                    style="border-bottom: 1px solid #D7D7D7;">
+                                    <div class="nav-link active" id="nav-batch-tab" data-bs-toggle="tab"
+                                        ng-class="{'mn_actt_wrngtab':prve_html=='Batch View'}"
+                                        data-bs-target="#nav-batch" type="button" role="tab" aria-controls="nav-batch"
+                                        aria-selected="true" ng-click="result_view('Batch View')"
+                                        style="height: 27px;padding: 11px 16px 2px 16px;">
+                                        <span style="padding-right: 6px;">Batch View</span>
+                                    </div>
+                                    <!-- Document Views -->
+                                    <div class="nav-link" id="nav-Document-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-Document"
+                                        ng-class="{'mn_actt_wrngtab':prve_html=='Document Views'}" type="button"
+                                        role="tab" aria-controls="nav-Document" aria-selected="true"
+                                        ng-click="result_view('Document Views')"
+                                        style="height: 27px;padding: 11px 16px 2px 16px;">
+                                        <span style="padding-right: 6px;">Data/Document Views</span>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+                <div class="tab-content" id="nav-tabContent" style="height: 88vh;">
+                    <!-- Routines -->
+                    <div class="tab-pane fade show active" id="nav-Routines" role="tabpanel"
+                        aria-labelledby="nav-Routines-tab" style="height:inherit;">
+                        <!-- for search and add routine -->
+                        <section class="card flex_row border-0 border-bottom border-top"
+                            style="padding:  16px 24px;justify-content: space-between;height:64px;border-radius: 0px;">
+                            <div class="input-group" style="width: 285px;height: 32px;">
+                                <div class="form-outline border">
+                                    <input type="search" onkeyup='searchTable()' id='myInput' class="form-control" />
+                                    <label class="form-label" for="form1" style="padding-top: 2px;">Search</label>
+                                </div>
+                                <button type="button" class="btn mainprimary" style="margin: 0px;">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                            <div class="float-left flex_row" style="height: 32px;gap: 16px;">
+                                <span>
+                                    <a class="btn text-white"
+                                        style="background-color: white;margin: 0px;padding: 5px 7px;color: #6680FF;text-align: center;font-family: Inter;font-size: 16px;font-style: normal;font-weight: 500;line-height: 150%;"
+                                        role="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 14 14" fill="none">
+                                            <g clip-path="url(#clip0_404_2602)">
+                                                <path
+                                                    d="M9.87488 6.50073H7.49988V4.12573C7.49988 4.05698 7.44363 4.00073 7.37488 4.00073H6.62488C6.55613 4.00073 6.49988 4.05698 6.49988 4.12573V6.50073H4.12488C4.05613 6.50073 3.99988 6.55698 3.99988 6.62573V7.37573C3.99988 7.44448 4.05613 7.50073 4.12488 7.50073H6.49988V9.87573C6.49988 9.94448 6.55613 10.0007 6.62488 10.0007H7.37488C7.44363 10.0007 7.49988 9.94448 7.49988 9.87573V7.50073H9.87488C9.94363 7.50073 9.99988 7.44448 9.99988 7.37573V6.62573C9.99988 6.55698 9.94363 6.50073 9.87488 6.50073Z"
+                                                    fill="#6680FF" />
+                                                <path
+                                                    d="M7 0C3.13437 0 0 3.13437 0 7C0 10.8656 3.13437 14 7 14C10.8656 14 14 10.8656 14 7C14 3.13437 10.8656 0 7 0ZM7 12.8125C3.79063 12.8125 1.1875 10.2094 1.1875 7C1.1875 3.79063 3.79063 1.1875 7 1.1875C10.2094 1.1875 12.8125 3.79063 12.8125 7C12.8125 10.2094 10.2094 12.8125 7 12.8125Z"
+                                                    fill="#6680FF" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_404_2602">
+                                                    <rect width="14" height="14" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span style="color:#1890FF ;"> Create new Routine</span>
+                                    </a>
+                                </span>
+                                <!-- <span><button type="button" class="btn mainprimary m-0">Apply Routines</button> -->
+                                <span>
+                                    <!-- <button type="button" class="btn m-0"
+                                        style="background-color: #1890FF;color: white;">Apply Routines</button> -->
+                                    <a class="btn text-white"
+                                        style="margin: 0px;padding: 5px 7px;background-color: #6680FF;color: white;text-align: center;font-family: Inter;font-size: 16px;font-style: normal;font-weight: 500;line-height: 150%;"
+                                        role="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 14 14" fill="none">
+                                            <g clip-path="url(#clip0_404_11263)">
+                                                <path
+                                                    d="M7 0.875C3.61758 0.875 0.875 3.61758 0.875 7C0.875 10.3824 3.61758 13.125 7 13.125C10.3824 13.125 13.125 10.3824 13.125 7C13.125 3.61758 10.3824 0.875 7 0.875ZM9.64551 4.9998L6.76621 8.99199C6.72597 9.04816 6.67292 9.09393 6.61145 9.1255C6.54999 9.15707 6.48189 9.17354 6.41279 9.17354C6.3437 9.17354 6.27559 9.15707 6.21413 9.1255C6.15267 9.09393 6.09962 9.04816 6.05938 8.99199L4.35449 6.62949C4.30254 6.55703 4.35449 6.45586 4.44336 6.45586H5.08457C5.22402 6.45586 5.35664 6.52285 5.43867 6.6377L6.41211 7.98848L8.56133 5.00801C8.64336 4.89453 8.77461 4.82617 8.91543 4.82617H9.55664C9.64551 4.82617 9.69746 4.92734 9.64551 4.9998Z"
+                                                    fill="white" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_404_11263">
+                                                    <rect width="14" height="14" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span class="text-light"> Apply Routines</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </section>
+                        <!-- For Display The  Automation Routine-->
+                        <section id="myTable">
+                            <div class="card sectioncard border"
+                                style="padding: 16px;margin-bottom: 24px;display: flex;flex-direction: column;gap: 8px;"
+                                ng-repeat="item in Automation_datastr track by $index" id="card_helight">
+                                <div style="height: 26px;">
+                                    <div class="form-check" style="float: left;"
+                                        ng-click="Selectroutincheck(item,$event)">
+                                        <input class="form-check-input" type="checkbox" value="" id="CheckDefault">
+                                    </div>
+                                    <span class="typographyMain">
+                                        {{item.mainheader}}
+                                    </span>
+                                </div>
+                                <div style="height: 21px;">
+                                    <div class="sub_div">
+                                        <span class="typography1">{{item.subheader}}</span>
+                                    </div>
+                                </div>
+                                <div class="flex_row"
+                                    style="width: 100%;justify-content: space-between;padding-left:32px;height: 22px;">
+                                    <div class="flex_row" style="margin: 4px;">
+                                        <div class="date">{{item.date}}</div>
+                                        <div class="edit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                                                viewBox="0 0 10 10" fill="none">
+                                                <path
+                                                    d="M8.59375 8.16406H1.40625C1.2334 8.16406 1.09375 8.30371 1.09375 8.47656V8.82812C1.09375 8.87109 1.12891 8.90625 1.17188 8.90625H8.82812C8.87109 8.90625 8.90625 8.87109 8.90625 8.82812V8.47656C8.90625 8.30371 8.7666 8.16406 8.59375 8.16406ZM2.5166 7.34375C2.53613 7.34375 2.55566 7.3418 2.5752 7.33887L4.21777 7.05078C4.2373 7.04688 4.25586 7.03809 4.26953 7.02344L8.40918 2.88379C8.41823 2.87475 8.42542 2.86402 8.43032 2.85221C8.43522 2.8404 8.43774 2.82773 8.43774 2.81494C8.43774 2.80215 8.43522 2.78949 8.43032 2.77767C8.42542 2.76586 8.41823 2.75513 8.40918 2.74609L6.78613 1.12207C6.76758 1.10352 6.74316 1.09375 6.7168 1.09375C6.69043 1.09375 6.66602 1.10352 6.64746 1.12207L2.50781 5.26172C2.49316 5.27637 2.48438 5.29395 2.48047 5.31348L2.19238 6.95605C2.18288 7.00837 2.18628 7.06221 2.20227 7.11292C2.21827 7.16363 2.24638 7.20967 2.28418 7.24707C2.34863 7.30957 2.42969 7.34375 2.5166 7.34375Z"
+                                                    fill="#6680FF" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Right  -->
+                                    <div class="frame-812257">
+                                        <div class="buttons-filled">
+                                            <div class="icon-wrapper">
+                                                <div class="icon">
+                                                    <svg class="retweet" width="10" height="10" viewBox="0 0 10 10"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1.32812 5.39063H1.94922C1.99219 5.39063 2.02734 5.35547 2.02734 5.3125V2.81934H7.18945V3.52832C7.18945 3.54688 7.19531 3.56446 7.20703 3.5791C7.21361 3.58754 7.22179 3.59459 7.23111 3.59984C7.24043 3.6051 7.25069 3.60846 7.26131 3.60973C7.27193 3.611 7.2827 3.61016 7.293 3.60725C7.30329 3.60434 7.31291 3.59942 7.32129 3.59278L8.7207 2.49414C8.7627 2.44531 8.75586 2.39356 8.7207 2.36524L7.32129 1.26758C7.30688 1.25606 7.28895 1.24985 7.27051 1.25C7.22559 1.25 7.18848 1.28711 7.18848 1.33203V2.04102H1.9502C1.56445 2.04102 1.25 2.35547 1.25 2.74219V5.3125C1.25 5.35547 1.28516 5.39063 1.32812 5.39063ZM8.67188 4.60938H8.05078C8.00781 4.60938 7.97266 4.64453 7.97266 4.6875V7.18067H2.81055V6.47168C2.81055 6.45313 2.80469 6.43555 2.79297 6.4209C2.78639 6.41247 2.77821 6.40542 2.76889 6.40016C2.75957 6.3949 2.74931 6.39154 2.73869 6.39027C2.72807 6.389 2.7173 6.38984 2.707 6.39275C2.69671 6.39566 2.68709 6.40058 2.67871 6.40723L1.2793 7.50586C1.2373 7.55469 1.24414 7.60645 1.2793 7.63477L2.67871 8.73242C2.69336 8.74414 2.71094 8.75 2.72949 8.75C2.77441 8.75 2.81152 8.71289 2.81152 8.66797V7.95899H8.05176C8.4375 7.95899 8.75195 7.64453 8.75195 7.25781V4.6875C8.75 4.64453 8.71484 4.60938 8.67188 4.60938Z"
+                                                            fill="#6680FF" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="button">Re-run</div>
+                                        </div>
+                                        <div style="">
+                                            <div class="btn m-0 p-0" ng-click="review_autiomantion(item.doc_id)"
+                                                title="{{item.doc_id}}"
+                                                style="margin: 0px;background-color: #1890FF;color: white;border-radius: 4px;padding: 1px 8px !important;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                                                    viewBox="0 0 10 10" fill="none" style="padding-left: 2px;">
+                                                    <g clip-path="url(#clip0_216_1698)">
+                                                        <path
+                                                            d="M9.64286 1.78368H7.85714V1.75594C7.85714 1.70684 7.81696 1.66666 7.76786 1.66666H7.14286C7.09375 1.66666 7.05357 1.70684 7.05357 1.75594V1.78368H5.40179V1.75594C5.40179 1.70684 5.36161 1.66666 5.3125 1.66666H4.6875C4.63839 1.66666 4.59821 1.70684 4.59821 1.75594V1.78368H2.94643V1.75594C2.94643 1.70684 2.90625 1.66666 2.85714 1.66666H2.23214C2.18304 1.66666 2.14286 1.70684 2.14286 1.75594V1.78368H0.357143C0.159598 1.78368 0 1.94327 0 2.14082V8.56939C0 8.76694 0.159598 8.92654 0.357143 8.92654H9.64286C9.8404 8.92654 10 8.76694 10 8.56939V2.14082C10 1.94327 9.8404 1.78368 9.64286 1.78368ZM9.19643 8.12296H0.803571V2.58725H2.14286V2.54961C2.14286 2.59871 2.18304 2.63889 2.23214 2.63889H2.85714C2.90625 2.63889 2.94643 2.59871 2.94643 2.54961V2.58725H4.59821V2.54961C4.59821 2.59871 4.63839 2.63889 4.6875 2.63889H5.3125C5.36161 2.63889 5.40179 2.59871 5.40179 2.54961V2.58725H7.05357V2.54961C7.05357 2.59871 7.09375 2.63889 7.14286 2.63889H7.76786C7.81696 2.63889 7.85714 2.59871 7.85714 2.54961V2.58725H9.19643V8.12296ZM3.92857 4.54161H1.875C1.82589 4.54161 1.78571 4.58179 1.78571 4.6309V5.16661C1.78571 5.21572 1.82589 5.2559 1.875 5.2559H3.92857C3.97768 5.2559 4.01786 5.21572 4.01786 5.16661V4.6309C4.01786 4.58179 3.97768 4.54161 3.92857 4.54161ZM3.92857 6.05947H1.875C1.82589 6.05947 1.78571 6.09965 1.78571 6.14876V6.68447C1.78571 6.73358 1.82589 6.77376 1.875 6.77376H3.92857C3.97768 6.77376 4.01786 6.73358 4.01786 6.68447V6.14876C4.01786 6.09965 3.97768 6.05947 3.92857 6.05947ZM7.3683 4.07956L6.21205 5.68335L5.62277 4.86751C5.58929 4.82063 5.53571 4.79385 5.4788 4.79385H4.86607C4.79353 4.79385 4.75112 4.87644 4.79353 4.93559L6.06696 6.70121C6.0834 6.72403 6.10503 6.74261 6.13006 6.75543C6.1551 6.76824 6.18282 6.77493 6.21094 6.77493C6.23906 6.77493 6.26678 6.76824 6.29181 6.75543C6.31684 6.74261 6.33847 6.72403 6.35491 6.70121L8.19643 4.14876C8.23884 4.0896 8.19643 4.00702 8.12388 4.00702H7.51116C7.45536 4.0059 7.40179 4.0338 7.3683 4.07956Z"
+                                                            fill="white" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_216_1698">
+                                                            <rect width="10" height="10" fill="white" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                                <span class="text-light pr-2" style="font-size: 12px;"> Review</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Result -->
+                    <div class="tab-pane fade bgmain" id="nav-Results" role="tabpanel" aria-labelledby="nav-Results-tab"
+                        style="padding: 24px 24px; display: flex !important;flex-direction: column;gap: 16px;">
+                        <!-- Summary  -->
+                        <div class="frame-812298">
+                            <div class="frame-812294">
+                                <div class="summary">Summary:</div>
+                            </div>
+                            <div class="frame-812300">
+                                <div class="frame-812296">
+                                    <div class="frame-812295">
+                                        <li class="total-number-of-tables">Total Number of Tables:</li>
+                                        <div class="_12345">12345</div>
+                                    </div>
+                                    <div class="frame-812295">
+                                        <li class="number-of-average-tables-per-document">
+                                            Number of Average Tables per Document:
+                                        </li>
+                                        <div class="_123">123</div>
+                                    </div>
+                                </div>
+                                <div class="frame-812297">
+                                    <div class="frame-8122952">
+                                        <div class="gray-tables">Gray Tables:</div>
+                                        <div class="_1232">123</div>
+                                    </div>
+                                    <div class="frame-8122953">
+                                        <div class="orange-tables">Orange Tables:</div>
+                                        <div class="_1232">123</div>
+                                    </div>
+                                    <div class="frame-8122954">
+                                        <div class="green-tables">Green Tables:</div>
+                                        <div class="_1232">123</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content  bgmain" id="nav-tabContent2" style="height: 70%;">
+                            <div class="tab-pane fade show active" id="nav-batch" role="tabpanel"
+                                aria-labelledby="nav-batch-tab" style="height:100%">
+                                <div class="row m-0 p-0"
+                                    style="height: 90vh;overflow: scroll;display: flex;flex-direction: row;gap: 1%;">
+                                    <div class="col-md-4 rounded p-0" style="width: 33%;">
+                                        <div class="card p-0 m-0">
+                                            <table
+                                                style="border-radius: var(--radius-spacing-4, 4px); padding:0px 16px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Doc ID</th>
+                                                        <th>Table ID</th>
+                                                        <th>Page No.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in Automation_reslt['gray']"
+                                                        ng-click="garyresult_clk(item)"
+                                                        ng-style="{'background-color': item.tdco,'color':item.color}"
+                                                        ng-class="{'helight_row':helight_resilt==item['doc_id']}">
+                                                        <td>{{item.doc_id}}
+                                                        </td>
+                                                        <td>{{item.table_id}}
+                                                        </td>
+                                                        <td>{{item.pgn}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4 rounded p-0" style="width: 33%;">
+                                        <div class="card p-0 m-0">
+                                            <table
+                                                style="border-radius: var(--radius-spacing-4, 4px);padding:0px 16px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Doc ID</th>
+                                                        <th>Table ID</th>
+                                                        <th>Page No.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in Automation_reslt['orange']"
+                                                        ng-click="orgresult_clk(item)" title="{{item['doc_id']}}"
+                                                        ng-style="{'background-color': item.tdco,'color':item.color}"
+                                                        ng-class="{'helight_row':helight_resilt==item['doc_id']}">
+                                                        <td>{{item.doc_id}}
+                                                        </td>
+                                                        <td>{{item.table_id}}
+                                                        </td>
+                                                        <td>{{item.pgn}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 rounded p-0" style="width: 32%;">
+                                        <div class="card p-0 m-0">
+                                            <table
+                                                style="border-radius: var(--radius-spacing-4, 4px);padding:0px 16px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Doc ID</th>
+                                                        <th>Table ID</th>
+                                                        <th>Page No.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in Automation_reslt['green']"
+                                                        ng-click="greenresult_clk(item)"
+                                                        ng-style="{'background-color': item.tdco,'color':item.color}"
+                                                        ng-class="{'helight_row':helight_resilt==item['doc_id']}">
+                                                        <td>{{item.doc_id}}
+                                                        </td>
+                                                        <td>{{item.table_id}}
+                                                        </td>
+                                                        <td>{{item.pgn}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-Document" role="tabpanel"
+                                aria-labelledby="nav-Document-tab" style="height:100%;">
+                                <div class="row m-0 p-0"
+                                    style="height: 90vh;overflow: scroll;display: flex;flex-direction: row;gap: 1%;">
+                                    <div class="col-md-4 rounded p-0" style="width: 33%;">
+                                        <div class="card p-0 m-0">
+                                            <table
+                                                style="border-radius: var(--radius-spacing-4, 4px);padding:0px 16px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Table ID</th>
+                                                        <th>Page No.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in Automation_reslt['gray']"
+                                                        ng-click="garyresult_clk(item)"
+                                                        ng-style="{'background-color': item.tdco,'color':item.color}"
+                                                        ng-class="{'helight_row':helight_resilt==item['doc_id']}">
+                                                        <td>{{item.table_id}}
+                                                        </td>
+                                                        <td>{{item.pgn}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+                                    
+
+
+
+
+
+
+
+
+
+                                    <div class="col-md-4 rounded p-0" style="width: 33%;">
+                                        <div class="card p-0 m-0">
+                                            <table
+                                                style="border-radius: var(--radius-spacing-4, 4px);padding:0px 16px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Table ID</th>
+                                                        <th>Page No.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in Automation_reslt['orange']"
+                                                        ng-click="garyresult_clk(item)" title="{{item['doc_id']}}"
+                                                        ng-style="{'background-color': item.tdco,'color':item.color}">
+                                                        <td>{{item.table_id}}
+                                                        </td>
+                                                        <td>{{item.pgn}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 rounded p-0" style="width: 32%;">
+                                        <div class="card p-0 m-0">
+                                            <table style="border-radius: var(--radius-spacing-4, 4px);padding:0px 16px;"
+                                                ng-click="garyresult_clk(item)">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Table ID</th>
+                                                        <th>Page No.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in Automation_reslt['green']"
+                                                        ng-style="{'background-color': item.tdco,'color':item.color}">
+                                                        <td>{{item.table_id}}
+                                                        </td>
+                                                        <td>{{item.pgn}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="" style="display:flex;flex-direction: row;height: calc(100% - 50px);" ng-if="reviewflg">
+            <!-- Side menu -->
+            <div class="sidemenu_r bg_grey1" ng-style="(silde_menu)?{}:{'transform': 'translate(-100%, 0)', 'opacity': '0'}">
+                <div class="submenu_r" ng-style="(silde_menu)?{}:{'display': 'none'}">
+                    <div class="card h-100">
+                        <div class="submenu_tabs">
+                            <div class="d-flex" style="height: 28px; padding: 2px;">
+                                <nav class="tabs filled_tabs_parent">
+                                    <div class="nav nav-tabs font16g h-100" id="nav-2-tab" role="tablist">
+                                        <div class="filled_tabs rounded-1 m-0 h-100" style="padding: 2px 12px;" id="oper-tab" data-bs-toggle="tab"
+                                            data-bs-target="#oper" type="button" role="tab"
+                                            aria-controls="oper" aria-selected="true" ng-click="operations()"
+                                            ng-class="{'mainprimary':activebutton3=='Operations'}">
+                                            <span> Operations </span></label>
+                                        </div>
+                                        <div class="filled_tabs rounded-1 m-0 h-100" style="padding: 2px 12px;" id="ddoc-tab" data-bs-toggle="tab"
+                                            data-bs-target="#ddoc" type="button" role="tab"
+                                            aria-controls="ddoc" aria-selected="false" ng-click="ddr()"
+                                            ng-class="{'mainprimary':activebutton3=='Data/Documents'}">
+                                            <span> Data/Documents </span></label>
+                                        </div>
+                                    </div>
+                                </nav>  
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                class="m-auto cursor-pointer" role="button" class="bi bi-x" viewBox="0 0 16 16" color="red"
+                                ng-click="project1_close()">
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </div>
+
+                            <span class="selecttxt breadcrumbdims m-0 p-0 w-100">
+                                <ol class="breadcrumb col px-4 py-2 m-0">
+                                    <!--li class="breadcrumb-item" ng-repeat="item in fnf['cur_taxos'][0]['plevels'] track by $index" title="{{item}}"><a class="black-text" >{{item.split('$$').slice(-1)[0]}}</a -->
+                                    <!-- <li class="breadcrumb-item" ng-repeat="item in t_grid.ntaxo track by $index" title="{{item}}"><a class="black-text" >{{item}}</a> -->
+                                    <span class="breadcrumb-item font12g" ng-repeat="item in revbc track by $index"
+                                    title="{{item}}"><a href="#" class="black-text1" ng-class="{'primarytext':$index==revbc.length-1}" ng-click="gohome(item)">{{item | limitTo:22}}
+                                    </a>
+                                       <span class="px-1 py-0">/</span>
+                                    </span>
+                                </ol>
+                            </span>
+
+                            <nav class="d-flex px-4 py-2">
+                                <div class="nav nav-sb-tabs m-auto" id="nav-sb-tab" role="tablist">
+                                    <div class="nav-sb-link px-2 py-1 font14g" id="nav-sb-batch-tab" data-bs-toggle="tab"
+                                        style="border-bottom: 2px solid var(--Border, #D7D7D7);"
+                                        ng-class="{'mn_actt_wrngtab':prve_html_dd=='Data/Documents'}"
+                                        data-bs-target="#nav-sb-batch" type="button" role="tab" aria-controls="nav-sb-batch"
+                                        aria-selected="true" ng-click="dd_tabs('Data/Documents')"
+                                        >
+                                        <span style="padding-right: 6px;font-size: 14px;">Data/Documents</span>
+                                    </div>
+                                    <!-- Document Views -->
+                                    <div class="nav-sb-link px-2 py-1 font14g" id="nav-sb-Document-tab" data-bs-toggle="tab"
+                                        style="border-bottom: 2px solid var(--Border, #D7D7D7);"
+                                        ng-class="{'mn_actt_wrngtab':prve_html_dd=='Tables/Elements'}" type="button"
+                                        data-bs-target="#nav-sb-Document"
+                                        role="tab" aria-controls="nav-sb-Document" aria-selected="true"
+                                        ng-click="dd_tabs('Tables/Elements')"
+                                        >
+                                        <span style="padding-right: 6px;font-size: 14px;">Tables/Elements</span>
+                                    </div>
+                                </div>
+                            </nav>
+
+                            <!-- <nav class="primarytext" style="margin: auto;">
+                                <span>
+                                    Doc ID
+                                </span>
+                            </nav> -->
+
+                            <!-- <span class="selecttxt bgmain text border-top"
+                                style="border-top: 1px solid var(--dividers, #DADEE7);background: var(--gray-gray-1, #FCFCFD);;">{{selected_sa_doc_value}}</span> -->
+                            <div class="tab-content submenu_list" id="nav-tabContent" style="height: calc(100% - 132px);/* overflow: auto; */">
+                                <div class="tab-pane fade show active h-100" id="nav-sb-home" role="tabpanel"
+                                    aria-labelledby="nav-sb-home-tab">
+                                    <!-- <div class="card-body text-primary"> -->
+                                        <ul id="submenu_list_ele_docs" class="submenu_list_ele h-100 overflow-auto" ng-if="prve_html_dd == 'Data/Documents'" lazy-load>
+                                            <li ng-repeat="item in cachedLst.submenu_list_ele_docs.loaded track by $index" id="{{$index}}" style="padding: 12px 16px;" ng-class="{'hilght': selected_bv_doc_value == item.k}" class="d-flex w-100 font16g text-left rounded-1"
+                                                style="/* padding: 2px;background: var(--gray-gray-1, #FCFCFD); */"
+                                                ng-click="bch_slct(item['pid'], item['k'], $event, $index)" title={{item.k}}
+                                                role="button"
+                                                >
+                                                <span class="flex-grow-1">{{item['k']}}</span>
+                                                <span><img src="src/images/chevron_right.svg" alt="chevron_right"></span>
+                                            </li>
+                                        </ul>
+                                        <ul id="submenu_list_ele_tbls" class="submenu_list_ele h-100 overflow-auto" ng-if="prve_html_dd == 'Tables/Elements'" lazy-load>
+                                            <li ng-repeat="item in cachedLst.submenu_list_ele_tbls.loaded track by $index" id="{{$index}}" style="padding: 8px 16px;" ng-class="{'hilght': selected_bv_tbl_i == item.k}" class="d-flex w-100 font12g text-left rounded-1"
+                                                style="/* padding: 2px;background: var(--gray-gray-1, #FCFCFD); */"
+                                                ng-click="bv_open_doc(item['k'])" title={{item.k}}
+                                                role="button"
+                                                >
+                                                <span class="flex-grow-1">{{item['k']}}</span>
+                                            </li>
+                                        </ul>
+                                    <!-- </div> -->
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                    aria-labelledby="nav-profile-tab" style="height: 91vh;">
+                                    <div class="csmlf csmlf_d">
+                                        <div class="csmll mt-1"
+                                            ng-repeat="b in brokers_list | filter:blfp track by $index"
+                                            ng-click="get_docs(b, false)" id="b_{{b['k']}}"
+                                            ng-class="{'hilght': bselcted['k'] == b['k']}"
+                                            style="background: var(--gray-gray-1, #FCFCFD);;padding: 8px 12px;display: flex;flex-direction: row;">
+                                            <div class="d-part" style="width:10%;"
+                                                ng-click="b['checked']=!b['checked'];$event.stopPropagation();"
+                                                ng-class="{'checked':b['checked']}">
+                                                <div class="float-left _aplvo _ft" style="width:auto;">
+                                                    <tas-check ng-if="b['checked']"></tas-check>
+                                                    <tas-uncheck ng-if="!b['checked']"></tas-uncheck>
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="csmllcn ct float-left" title="{{b['n']}}"
+                                                style=" font-size: 12px;width:80%;"
+                                                ng-class="{'act': bselcted['k'] == b['k']}">
+                                                {{b['n']}} ({{b['cnt']}})
+                                            </div> -->
+                                            <li class="list-group-item px-3 border-0"
+                                                style="padding: 2px;width: 79%;background: var(--gray-gray-1, #FCFCFD);"
+                                                title="{{b['n']}}" style="cursor: pointer"
+                                                ng-class="{'hilght': bselcted['k'] == b['k']}">
+                                                {{b['n'] | limitTo:32}}...({{b['cnt']}})</li>
+
+                                            <div class="" style="width:10%;"
+                                                ng-click="batchname_status(b);$event.stopPropagation();"
+                                                ng-class="{'checked':dd['checked']}">
+                                                <div class="float-right _aplvo _ft" style="width:auto;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="#218BFF" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                        <path
+                                                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                    </svg>
+                                                    <i class="bi bi-info-circle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                                    aria-labelledby="nav-contact-tab">
+                                    <grid-data gconfig="t_grid" style="height: 91vh;width: 440px;"></grid-data>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <tas-resizer id="reviewPageResizer" config="resizec"></tas-resizer> -->
+            <div id="content" class="position-absolute" ng-style="(silde_menu)?{'width': 'calc(100% - 344px)', 'margin-left': '344px', 'transition': 'ease-in-out .4s'}:{'width': '100%'}" style="height: calc(100% - 50px);">
+                <div class="tab-content h-100" id="nav-rev-tabContent">
+                    <!-- Routines -->
+                    <div class="show d-flex h-100" id="ddoc" role="tabpanel" aria-labelledby="ddoc-tab" style="">
+                        <div id="content_right" style="width: 50%;" class="h-100 border-1 border-right border-left flex_col">
+                            <div class="submenu_tabs typography pr-4">
+                                <span class="d-flex gap-2">
+                                    <span class="menu_icon" ng-click="menu_icon()" ng-if="!silde_menu" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" style="height: 28px;" role="button"><!--ng-click="menu_icon()" -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none" ng-show="show_hover" class="ng-hide">
+                                            <path d="M0.000279069 1.39619C0.000279069 0.625096 0.511954 0 1.14314 0H14.8574C15.4886 0 16.0003 0.625096 16.0003 1.39619C16.0003 2.16729 15.4886 2.79238 14.8574 2.79238H1.14314C0.511954 2.79238 0.000279069 2.16729 0.000279069 1.39619Z" fill="#1890FF"></path>
+                                            <path d="M0 7.17448C0 6.40339 0.511675 5.77829 1.14286 5.77829H14.8571C15.4883 5.77829 16 6.40339 16 7.17448C16 7.94558 15.4883 8.57067 14.8571 8.57067H1.14286C0.511675 8.57067 0 7.94558 0 7.17448Z" fill="#1890FF"></path>
+                                            <path d="M0.000279069 12.6038C0.000279069 11.8327 0.511954 11.2076 1.14314 11.2076H14.8574C15.4886 11.2076 16.0003 11.8327 16.0003 12.6038C16.0003 13.3749 15.4886 14 14.8574 14H1.14314C0.511954 14 0.000279069 13.3749 0.000279069 12.6038Z" fill="#1890FF"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none" ng-show="!show_hover" class="">
+                                            <path d="M0.500359 2.2951C0.500359 1.30369 1.15823 0.5 1.96975 0.5H19.6024C20.4139 0.5 21.0718 1.30369 21.0718 2.2951C21.0718 3.28651 20.4139 4.0902 19.6024 4.0902H1.96975C1.15823 4.0902 0.500359 3.28651 0.500359 2.2951Z" fill="#1890FF"></path>
+                                            <path d="M0.5 9.72433C0.5 8.73293 1.15787 7.92923 1.96939 7.92923H19.602C20.4136 7.92923 21.0714 8.73293 21.0714 9.72433C21.0714 10.7157 20.4136 11.5194 19.602 11.5194H1.96939C1.15787 11.5194 0.5 10.7157 0.5 9.72433Z" fill="#1890FF"></path>
+                                            <path d="M0.500359 16.7049C0.500359 15.7135 1.15823 14.9098 1.96975 14.9098H19.6024C20.4139 14.9098 21.0718 15.7135 21.0718 16.7049C21.0718 17.6963 20.4139 18.5 19.6024 18.5H1.96975C1.15823 18.5 0.500359 17.6963 0.500359 16.7049Z" fill="#1890FF"></path>
+                                        </svg>
+                                    </span>
+                                    <!-- <span class="menu_icon" ng-click="menu_icon()" ng-if="!silde_menu" style="width:2%;" role="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15"
+                                            fill="none">
+                                            <path
+                                                d="M0.000156999 1.89619C0.000156999 1.1251 0.511832 0.5 1.14301 0.5H14.8573C15.4885 0.5 16.0002 1.1251 16.0002 1.89619C16.0002 2.66729 15.4885 3.29238 14.8573 3.29238H1.14301C0.511832 3.29238 0.000156999 2.66729 0.000156999 1.89619Z"
+                                                fill="#218BFF" />
+                                            <path
+                                                d="M-0.00012207 7.67448C-0.00012207 6.90339 0.511553 6.27829 1.14274 6.27829H14.857C15.4882 6.27829 15.9999 6.90339 15.9999 7.67448C15.9999 8.44558 15.4882 9.07067 14.857 9.07067H1.14274C0.511553 9.07067 -0.00012207 8.44558 -0.00012207 7.67448Z"
+                                                fill="#218BFF" />
+                                            <path
+                                                d="M0.000156999 13.1038C0.000156999 12.3327 0.511832 11.7076 1.14301 11.7076H14.8573C15.4885 11.7076 16.0002 12.3327 16.0002 13.1038C16.0002 13.8749 15.4885 14.5 14.8573 14.5H1.14301C0.511832 14.5 0.000156999 13.8749 0.000156999 13.1038Z"
+                                                fill="#218BFF" />
+                                        </svg>
+                                    </span> -->
+                                    <span class="m-auto">
+                                        Source Table: {{selected_bv_tbl_id}}
+                                    </span>
+                                </span>
+                                <!-- <span>
+                                    <button type="button" class="btn m-0 font12g border dropdown-toggle" style="height: 24px;padding: 4px 8px;font-size: 12px !important;display: flex;gap: 8px;align-items: center; " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        ng-click="select_b()">Table ID: 4865
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                            <path
+                                                d="M9.95989 4.47488L6.69989 7.73488C6.31489 8.11988 5.68489 8.11988 5.29989 7.73488L2.03989 4.47488"
+                                                stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </span> -->
+                                <span class="">
+                                    <button type="button" class="btn m-0 font12g border" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 24px;padding: 4px 8px;font-size: 12px !important;display: flex;gap: 8px;align-items: center; ">
+                                      {{selected_bv_tbl_id}}
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path
+                                            d="M9.95989 4.47488L6.69989 7.73488C6.31489 8.11988 5.68489 8.11988 5.29989 7.73488L2.03989 4.47488"
+                                            stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <div class="dropdown-menu overflow-auto" style="height: 280px;">
+                                      <button ng-repeat="tid in tst_tbl_id_lst track by $index" class="dropdown-item font12g" type="button" ng-click="bv_open_doc(tid.k)">{{tid.k}}</button>
+                                    </div>
+                                </span>
+                                <!-- <div class="dropdown-menu dropdown-menu-right" ng-if="tbl_drp">
+                                    <div class="">
+                                        <div class="dropdown-list">
+                                            <div class="automation-routines-inc">Table ID: 4865</div>
+                                        </div>
+                                        <div class="dropdown-list">
+                                            <div class="automation-routines-inc">Table ID: 4865</div>
+                                        </div>
+                                        <div class="dropdown-list">
+                                            <div class="automation-routines-inc2">Table ID: 4865</div>
+                                        </div>
+                                        <div class="dropdown-list">
+                                            <div class="automation-routines-inc">Table ID: 4865</div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="p-3" style="height: 600px;max-height: 600px;">
+                                <div class="h-100 overflow-auto">
+                                    <!-- <img class="" src="src/images/{{selected_bv_tbl_id.slice(0, 4)}}.png" alt="table"> -->
+                                </div>
+                            </div>
+                            <div class="bgmain" style=""  ng-style="(ar_closed)?{'height': 'calc(100% - 744px)'}:{'height': 'calc(100% - 944px)'}"></div>
+                            <div class="flex_col bgmain" ng-style="(ar_closed)?{'max-height':'40px','min-height':'40px'}:{'min-height':'240px','height': '240px'}">
+                                <!-- {{ar_closed?'max-height':'40px';'min-height':'40px':'min-height':'280px'}} -->
+                                <span class="w-100 typography border-top border-bottom selecttxt py-2 px-3 bg-white">
+                                    <span class="flex-grow-1">Automation Routines</span>
+                                    <img class="date" ng-click="ar_closed=!ar_closed" ng-style="{'transform': (ar_closed) ? 'rotateZ(180deg)':''}" ng-src="src/images/chevron_down_box.svg" alt="chevron_down_box" role="button">
+                                </span>
+                                <div class="w-100 d-flex flex_col gap-2 px-3 pt-3 lh-sm" ng-if='!ar_closed'>
+                                    <div class="card d-flex flex_col gap-2 p-3 lh-sm">
+                                        <span class="font16g text-left">
+                                            Notice requirements on change of Investment Manager
+                                        </span>
+                                        <div class="">
+                                            <span class="font12g">Refers to any notification requirements from parties involved in the event of change of Investment Manager</span>
+                                        </div>
+                                        <div class="flex_row py-2" style="height: 38px;">
+                                            <div class="flex_row w-50 gap-2">
+                                                <div class="date secondarytext my-auto">Date: 12-Jun-2022</div>
+                                                <img style="height: 12px !important;" class="date h-50 my-auto" src="src/images/edit.svg" alt="edit">
+                                                <!-- <img class="date h-50 my-auto" src="src/images/Setting.svg" alt="Setting"> -->
+                                            </div>
+                                            <!-- Right  -->
+                                            <!-- </div> -->
+                                            <div class="frame-812257 w-50">
+                                                <div class="buttons-filled font12p" ng-click="review_autiomantion(item.doc_id)" title="14785" style="margin: 0px;padding: 5px 7px;">
+                                                    <div class="">
+                                                        <span class="pr-2 secondarytext">Ignore Routine </span>
+                                                    </div>
+                                                </div>
+                                                <div class="buttons-filled font12p secondary">
+                                                    <div class="text-light button">Re-INC</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <tas-resizer id="reviewPageResizer" config="resizepr"></tas-resizer> -->
+                        <div id="content_left" style="width: 50%;" class="h-100">
+                            <div class="submenu_tabs w-100 border-1 py-3 px-4 flex_row align-items-start">
+                                <nav class="d-flex my-auto">
+                                    <div class="nav nav-tabs" id="nav-right-tab" role="tablist">
+                                        <!-- Document Views -->
+                                        <div class="nav-link font12g" id="nav-right-batch-tab" data-bs-toggle="tab"
+                                            style="border-bottom: 2px solid var(--Border, #D7D7D7); padding: 4px 12px;"
+                                            ng-class="{'mn_actt_wrngtab':prve_html_bv=='Batch'}"
+                                            data-bs-target="#nav-right-batch" type="button" role="tab" aria-controls="nav-right-batch"
+                                            aria-selected="true" ng-click="bv_tabs('Batch')"
+                                            >
+                                            <span>Batch View</span>
+                                        </div>
+                                        <div class="nav-link font12g" id="nav-right-Document-tab" data-bs-toggle="tab"
+                                            style="border-bottom: 2px solid var(--Border, #D7D7D7); padding: 2px 12px;"
+                                            ng-class="{'mn_actt_wrngtab':prve_html_bv=='Data/Documents'}" type="button"
+                                            data-bs-target="#nav-right-Document" role="tab" aria-controls="nav-right-Document" aria-selected="true"
+                                            ng-click="bv_tabs('Data/Documents')">
+                                            <span>Data/Documents View</span>
+                                        </div>
+                                    </div>
+                                </nav>
+                                <div class="btn d-flex m-0 p-0 font12p text-white gap-1 mainprimary border-1 flex_row" title="Home"  id="nav-home-tab" type="button" role="button" ng-click="gohome('home')" style="padding: 2px 8px !important;background-color: #e5ebff !important;">
+                                    <img src="src/images/home.svg" alt="home">
+                                    <span style="color: #3854dd; font-size: 12px;font-weight: 600;">Home</span>
+                                </div>
+                            </div>
+                            <div id="bv_right" class="p-4 d-flex flex_col gap-3 bgmain overflow-auto" ng-if="prve_html_bv=='Batch'" style="height: calc(100% - 56px);">
+                                <ul class="typography w-100 h-100 p-0 m-0 d-flex gap-3 flex_col" ng-repeat="item in tst_doc_id_lst track by $index">
+                                    <li ng-click="bv_docs(item['pid'], item['k'], $event, $index)" class="submenu_list_ele card w-100" ng-class="bv_open.includes(item['k']) ? 'batchdd_active': 'border-0 border-bottom'" role="button">
+                                       <div class="d-flex font16g text-left w-100"
+                                        title={{item.k}}
+                                        style="height: 24px;">
+                                           <span class="flex-grow-1">{{item['k']}}</span>
+                                           <span class=""><img ng-if="!bv_open.includes(item['k'])" src="src/images/chevron_right.svg" alt="chevron_right"><img ng-if="bv_open.includes(item['k'])" src="src/images/chevron_down.svg" alt="chevron_down"></span>
+                                       </div>
+                                    </li>
+                                    <li class="w-100 p-0 m-0 d-flex gap-3 flex_col overflow-auto" id="{{'docid'+$index}}" ng-if="bv_open.includes(item['k'])" lazy-load>
+                                            <div class="flex_col gap-1 font16g text-left gap-1 w-100 card"
+                                                style="padding: 16px 12px 4px 12px"
+                                                ng-repeat="table in cachedLst['docid'+$index].loaded track by $index" title={{item.k}}
+                                                ng-class="{'view_more': tst_doc_id_lst[$parent.$index]['vm'][$index]}"
+                                                ng-click="bv_open_doc(table.slice(0, 4));tst_doc_id_lst[$parent.$index]['vm'][$index] = true"
+                                                ng-style="{'max-height': (tst_doc_id_lst[$parent.$index]['vm'][$index]) ? 'unset' : '280px' };"
+                                                role="button">
+                                                <div class="flex-grow-1 cursor-pointer tblid_head" role="button">
+                                                    TOC ID: {{table}}
+                                                </div>
+                                                <div class="overflow-hidden">
+                                                    <!-- <img src="src/images/{{table.slice(0, 4)}}.png" alt="table"> -->
+                                                </div>
+                                                <span class="font10b user-select-none" role="button" ng-if="tst_doc_id_lst[$parent.$parent.$index]['vm'][$index] == false">View More</span>
+                                                <span class="font10b user-select-none" role="button" ng-if="tst_doc_id_lst[$parent.$parent.$index]['vm'][$index] == true" ng-click="tst_doc_id_lst[$parent.$parent.$index]['vm'][$index] = false;$event.stopPropagation();">View Less</span>
+                                            </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-flex flex_row bgmain" ng-if="prve_html_bv=='Data/Documents'" style="height: calc(100% - 56px);">
+                                <div style="width: 24px;display: flex;"><img role="button" ng-click="doc_pg('prev')" class="m-auto" ng-class="{'disabled': selected_bv_doc_ind == 0}" src="src/images/chevron_left_box.svg" alt="chevron_left_box"></div>
+                                <div id="{{'docid'+selected_bv_doc_ind}}" class="d-flex flex_col flex-grow-1 gap-3 px-3 h-100 overflow-auto" lazy-load>
+                                    <div class="submenu_tabs bg-transparent typography px-4 py-1 h-6">
+                                        <span class="d-flex gap-2">
+                                            <span class="m-auto">
+                                                {{selected_bv_doc_id}}
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <ul class="typography w-100 p-0 m-0 d-flex gap-3 flex_col" ng-repeat="item in cachedLst['docid'+selected_bv_doc_ind].loaded track by $index">
+                                    <!-- <ul class="typography w-100 p-0 m-0 d-flex gap-3 flex_col" ng-repeat="item in tst_doc_id_lst[selected_bv_doc_ind]['tbl_list'] track by $index"> -->
+                                        <li class="d-flex font16g text-left gap-1 w-100 card"
+                                            ng-style="{'max-height': (tst_doc_id_lst[selected_bv_doc_ind].vm[$index]) ? 'unset' : '280px' };"
+                                            style="padding: 16px 12px 4px 12px"
+                                            ng-click="bv_open_doc(item.slice(0, 4));tst_doc_id_lst[selected_bv_doc_ind].vm[$index] = true"
+                                            ng-class="{'view_more': tst_doc_id_lst[selected_bv_doc_ind]['vm'][$index]}"
+                                            title={{item.slice(0, 4)}}
+                                            role="button"
+                                            >
+                                            <div class="flex-grow-1 cursor-pointer tblid_head" role="button">
+                                                TOC ID: {{item}}
+                                            </div>
+                                            <div class="overflow-hidden w-100 m-auto">
+                                                <!-- <img src="src/images/{{item.slice(0, 4)}}.png" alt="table"> -->
+                                            </div>
+                                            <span class="font10b user-select-none" role="button" ng-if="tst_doc_id_lst[selected_bv_doc_ind].vm[$index] == false" ng-click="$event.preventDefault();tst_doc_id_lst[selected_bv_doc_ind].vm[$index] = true">View More</span>
+                                            <!-- {{tst_doc_id_lst[selected_bv_doc_ind][$index].vm}} {{tst_doc_id_lst[selected_bv_doc_ind][$index]}} {{tst_doc_id_lst[selected_bv_doc_ind]}} {{$index}}
+                                                toggle_viewmore = ($event, selected_bv_doc_ind, $index, tst_doc_id_lst, false)
+                                             -->
+                                            <span class="font10b user-select-none" role="button" ng-if="tst_doc_id_lst[selected_bv_doc_ind].vm[$index] == true" ng-click="tst_doc_id_lst[selected_bv_doc_ind].vm[$index] = false;$event.stopPropagation();">View Less</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="width: 24px;display: flex;"><img role="button" ng-click="doc_pg('next')" class="m-auto" ng-class="{'disabled': selected_bv_doc_ind == tst_doc_id_lst.length-1}" src="src/images/chevron_right_box.svg" alt="chevron_right_box"></div>
+                            </div>
+                        </div>
+                    </div>
+
+    </div>
+    
+  
+</body>
+
+</html>
