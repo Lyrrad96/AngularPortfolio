@@ -7,6 +7,7 @@ import { GridComponent } from './grid/grid.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RpslsComponent } from './rpsls/rpsls.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,6 +15,7 @@ import { NgModule } from '@angular/core';
     HomeComponent,
     HscrollComponent,
     GridComponent,
+    RpslsComponent,
   ],
   imports: [
     AppRoutingModule,
