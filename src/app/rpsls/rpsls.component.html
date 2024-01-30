@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Lizard Spock</title>
+  </head>
+
+  <body>
+    <div id="field">
+      <div id="left">
+        <div class="options">
+          <img [ngStyle]="{'border': img == playerChoice ? '4px solid green' : ''}" *ngFor="let img of imgArray" src="../../assets/{{img}}.jpeg" alt="{{img}}" (click)="selection(img)">
+        </div>
+        <div class="selection">
+          <span style="margin: 0 auto;">{{pScore}}</span>
+          <img src="../../assets/{{playerChoice}}.jpeg" alt="selection">
+        </div>
+      </div>
+      <div id="result">
+        {{result}}
+      </div>
+      <div id="right">
+        <div class="selection">
+          <span style="margin: 0 auto;">{{oScore}}</span>
+          <img src="../../assets/{{opponentChoice}}.jpeg" alt="selection">
+        </div>
+        <div class="options">
+          <img [ngStyle]="{'border': img == opponentChoice ? '4px solid green' : ''}" *ngFor="let img of imgArray" src="../../assets/{{img}}.jpeg" alt="{{img}}">
+        </div>
+      </div>
+      <div *ngIf="false">
+        <!--Buttons for player1-->
+        <div class="radio-toolbar btn-pos1">
+          <input type="radio" id="r1" name="o1" value="r" checked />
+          <label for="r1">Rock</label>
+
+          <input type="radio" id="p1" name="o1" value="p" />
+          <label for="p1">Paper</label>
+
+          <input type="radio" id="s1" name="o1" value="s" />
+          <label for="s1">Scissors</label>
+
+          <input type="radio" id="l1" name="o1" value="l" />
+          <label for="l1">Lizard</label>
+
+          <input type="radio" id="S1" name="o1" value="S" />
+          <label for="S1">Spock</label>
+        </div>
+        <!--Submit for player1 store option and print image-->
+        <div id="player1" class="btn-pos12"></div>
+        <button
+          type="button"
+          onclick="displayRadioValue1();show_image(imgArray[p1].src, 240, 210, 'noting');"
+        >
+          Submit1
+        </button>
+        <!--Buttons for player2-->
+        <div class="radio-toolbar btn-pos2">
+          <input
+            type="radio"
+            id="r2"
+            name="o2"
+            value="r"
+            src="rock.jpeg"
+            name="submit"
+            width="100"
+            height="48"
+            alt="submit"
+            checked
+          />
+          <label for="r2">Rock</label>
+
+          <input type="radio" id="p2" name="o2" value="p" />
+          <label for="p2">Paper</label>
+
+          <input type="radio" id="s2" name="o2" value="s" />
+          <label for="s2">Scissors</label>
+
+          <input type="radio" id="l2" name="o2" value="l" />
+          <label for="l2">Lizard</label>
+
+          <input type="radio" id="S2" name="o2" value="S" />
+          <label for="S2">Spock</label>
+        </div>
+        <!--Submit for player2 store option and print image-->
+        <div id="player2" class="btn-pos2"></div>
+        <button
+          type="button"
+          onclick="displayRadioValue2();show_image(imgArray[p2].src, 240, 210, 'noting');"
+        >
+          Submit2
+        </button>
+          <div id="img1"></div>
+        <button type="button" onclick="get_image1()">Submit</button>
+
+        <div id="img2"></div>
+        <button type="button" onclick="get_image2()">Submit</button>
+
+        <div id="result"></div>
+        <button type="button" onclick="calculate()">Result</button>
+      </div>
+    </div>
+  </body>
+</html>

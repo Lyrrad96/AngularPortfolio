@@ -1,0 +1,45 @@
+#field {
+  height: 100%;
+  width: 100%;
+  background: url(../../assets/field.png) no-repeat;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 0.25rem solid black;
+  margin: auto;
+  display: flex;
+}
+
+#left, #right {
+  height: 100%;
+  width: 50%;
+  display: flex;
+}
+#right>div>* {
+  transform: rotateY(180deg)
+}
+#left>.selection>img, #right>.selection>img {
+  display: flex;
+  margin: auto;
+  /* width: 400px; */
+  height: 60%;
+}
+.selection {
+  display: flex;
+  flex-direction: column;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  width: 100px;
+}
+.options>img {
+  cursor: pointer;
+  height: 100%;
+  width: 100px;
+  border: 1px solid;
+}
+.options>img:hover {
+  border: 2px solid red;
+}
